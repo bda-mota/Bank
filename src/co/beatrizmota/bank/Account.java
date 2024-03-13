@@ -9,7 +9,8 @@ public class Account {
     private String name;
     private double balance;
 
-    private Log logger = new Log();
+    private final Log logger = new Log();
+
     public Account(String agency, String cc, String name){
         this.agency = agency;
         this.cc = cc;
@@ -17,7 +18,7 @@ public class Account {
     }
 
     public void setName(String name) {
-        if (name.length() > MAX_LENGTH){
+        if (name.length() > MAX_LENGTH) {
             this.name = name.substring(0, MAX_LENGTH);
         } else {
             this.name = name;
